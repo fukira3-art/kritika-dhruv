@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Kritika & Dhruv | Wedding Invitation</title>
+
+  <meta
+    name="description"
+    content="Wedding invitation of Kritika & Dhruv — 18 October 2026"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #fff9f2;
+      color: #4a2722;
+      font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       LOADING / OPENING SCREEN
+    ========================= */
+
+    .opening {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background:
+        radial-gradient(circle at center, #fff4df 0%, #f7d8bd 45%, #8b342d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    .opening.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .opening-content {
+      padding: 30px;
+      animation: fadeUp 1.5s ease;
+    }
+
+    .opening-small {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: #7d4138;
+      margin-bottom: 20px;
+    }
+
+    .opening h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(65px, 15vw, 120px);
+      font-weight: 400;
+      color: #752d29;
+      line-height: 0.9;
+    }
+
+    .opening-date {
+      margin: 25px 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      letter-spacing: 4px;
+    }
+
+    .open-btn {
+      border: 1px solid #8b342d;
+      background: #8b342d;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 11px;
+      transition: 0.3s;
+    }
+
+    .open-btn:hover {
+      background: transparent;
+      color: #8b342d;
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       FLOATING PETALS
+    ========================= */
+
+    .petals {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+      overflow: hidden;
+    }
+
+    .petal {
+      position: absolute;
+      top: -30px;
+      width: 12px;
+      height: 18px;
+      background: #d88c87;
+      border-radius: 100% 0 100% 0;
+      opacity: 0.6;
+      animation: fall linear infinite;
+    }
+
+    .petal:nth-child(1) {
+      left: 10%;
+      animation-duration: 8s;
+      animation-delay: 1s;
+    }
+
+    .petal:nth-child(2) {
+      left: 25%;
+      animation-duration: 11s;
+      animation-delay: 3s;
+    }
+
+    .petal:nth-child(3) {
+      left: 40%;
+      animation-duration: 9s;
+      animation-delay: 2s;
+    }
+
+    .petal:nth-child(4) {
+      left: 60%;
+      animation-duration: 12s;
+      animation-delay: 4s;
+    }
+
+    .petal:nth-child(5) {
+      left: 78%;
+      animation-duration: 10s;
+      animation-delay: 1s;
+    }
+
+    .petal:nth-child(6) {
+      left: 90%;
+      animation-duration: 13s;
+      animation-delay: 5s;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+      }
+
+      100% {
+        transform: translateY(110vh) translateX(100px) rotate(360deg);
+      }
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      background:
+        linear-gradient(
+          rgba(255, 249, 242, 0.82),
+          rgba(255, 239, 224, 0.9)
+        ),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 25px;
+      border: 1px solid rgba(117, 45, 41, 0.35);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .save {
+      text-transform: uppercase;
+      letter-spacing: 7px;
+      font-size: 12px;
+      color: #8b342d;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(75px, 16vw, 150px);
+      font-weight: 400;
+      color: #752d29;
+      line-height: 0.9;
+    }
+
+    .ampersand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 42px;
+      color: #a56b48;
+      margin: 12px 0;
+    }
+
+    .hero-date {
+      margin-top: 30px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      letter-spacing: 5px;
+    }
+
+    .hero-place {
+      margin-top: 12px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       COMMON SECTIONS
+    ========================= */
+
+    section {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .section-label {
+      color: #a56b48;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 8vw, 70px);
+      font-weight: 500;
+      color: #752d29;
+      margin-bottom: 25px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: #b87b5e;
+      margin: 25px auto;
+    }
+
+    .text {
+      max-width: 650px;
+      margin: auto;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 21px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       COUPLE
+    ========================= */
+
+    .couple {
+      background: #fff9f2;
+    }
+
+    .couple-names {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .person {
+      min-width: 220px;
+    }
+
+    .person h3 {
+      font-family: "Great Vibes", cursive;
+      font-size: 55px;
+      font-weight: 400;
+      color: #752d29;
+    }
+
+    .person p {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+    .heart {
+      font-size: 28px;
+      color: #a54c46;
+    }
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+
+    .countdown-section {
+      background: #752d29;
+      color: white;
+    }
+
+    .countdown-section .section-label {
+      color: #e6b89b;
+    }
+
+    .countdown-section .section-title {
+      color: #fff4e7;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .time-box {
+      width: 110px;
+      height: 110px;
+      border: 1px solid rgba(255,255,255,0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .time-box span {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+    }
+
+    .time-box small {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 8px;
+      opacity: 0.8;
+    }
+
+    /* =========================
+       EVENT
+    ========================= */
+
+    .event-card {
+      max-width: 650px;
+      margin: 35px auto 0;
+      padding: 50px 25px;
+      background: #fff;
+      border: 1px solid #ead7c7;
+      box-shadow: 0 15px 50px rgba(83, 45, 30, 0.08);
+    }
+
+    .event-icon {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    .event-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      font-weight: 500;
+      color: #752d29;
+    }
+
+    .event-date {
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin: 15px 0;
+    }
+
+    .event-location {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      margin: 15px 0 30px;
+    }
+
+    .map-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: #8b342d;
+      padding: 13px 25px;
+      border-radius: 40px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .map-btn:hover {
+      transform: translateY(-3px);
+      background: #682722;
+    }
+
+    /* =========================
+       MESSAGE
+    ========================= */
+
+    .message {
+      background: #f4e5d7;
+    }
+
+    .message-box {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .message-text {
+      font-family: "Noto Serif Devanagari", serif;
+      font-size: 21px;
+      line-height: 2;
+      margin-top: 30px;
+    }
+
+    /* =========================
+       RSVP
+    ========================= */
+
+    .rsvp {
+      background: #fff9f2;
+    }
+
+    .rsvp-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 35px;
+      background: #752d29;
+      color: white;
+      text-decoration: none;
+      border-radius: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 10px;
+      transition: 0.3s;
+    }
+
+    .rsvp-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #4a2722;
+      color: #f7dfca;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    footer h2 {
+      font-family: "Great Vibes", cursive;
+      font-size: 65px;
+      font-weight: 400;
+    }
+
+    footer p {
+      margin-top: 15px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       MUSIC BUTTON
+    ========================= */
+
+    .music-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      background: #752d29;
+      color: white;
+      z-index: 100;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .music-btn.playing {
+      animation: rotateMusic 3s linear infinite;
+    }
+
+    @keyframes rotateMusic {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: 1s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .hero::before {
+        inset: 12px;
+      }
+
+      .hero h1 {
+        font-size: 85px;
+      }
+
+      .couple-names {
+        gap: 15px;
+      }
+
+      .person h3 {
+        font-size: 48px;
+      }
+
+      .time-box {
+        width: 75px;
+        height: 85px;
+      }
+
+      .time-box span {
+        font-size: 30px;
+      }
+
+      .time-box small {
+        font-size: 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       OPENING SCREEN
+  ========================= -->
+
+  <div class="opening" id="opening">
+
+    <div class="opening-content">
+
+      <div class="opening-small">
+        Wedding Invitation
+      </div>
+
+      <h1>Kritika<br>&<br>Dhruv</h1>
+
+      <div class="opening-date">
+        18 · 10 · 2026
+      </div>
+
+      <button class="open-btn" onclick="openInvitation()">
+        Open Invitation
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       FLOATING PETALS
+  ========================= -->
+
+  <div class="petals">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+  </div>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="save">
+        Save the Date
+      </div>
+
+      <h1>
+        Kritika
+        <div class="ampersand">&</div>
+        Dhruv
+      </h1>
+
+      <div class="hero-date">
+        18 October 2026
+      </div>
+
+      <div class="hero-place">
+        Shivpur Railway Station
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       INVITATION
+  ========================= -->
+
+  <section class="couple reveal">
+
+    <div class="section-label">
+      Together With Their Families
+    </div>
+
+    <h2 class="section-title">
+      We Are Getting Married
+    </h2>
+
+    <div class="divider"></div>
+
+    <p class="text">
+      With hearts full of love and happiness, we invite you
+      to celebrate the beginning of a beautiful new chapter
+      in the lives of Kritika and Dhruv.
+    </p>
+
+    <div class="couple-names">
+
+      <div class="person">
+        <h3>Kritika</h3>
+        <p>The Bride</p>
+      </div>
+
+      <div class="heart">
+        ♥
+      </div>
+
+      <div class="person">
+        <h3>Dhruv</h3>
+        <p>The Groom</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       COUNTDOWN
+  ========================= -->
+
+  <section class="countdown-section">
+
+    <div class="section-label">
+      The Countdown Begins
+    </div>
+
+    <h2 class="section-title">
+      Until We Say "I Do"
+    </h2>
+
+    <div class="countdown">
+
+      <div class="time-box">
+        <span id="days">00</span>
+        <small>Days</small>
+      </div>
+
+      <div class="time-box">
+        <span id="hours">00</span>
+        <small>Hours</small>
+      </div>
+
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <small>Minutes</small>
+      </div>
+
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <small>Seconds</small>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EVENT
+  ========================= -->
+
+  <section class="event reveal">
+
+    <div class="section-label">
+      Join Us
+    </div>
+
+    <h2 class="section-title">
+      The Wedding
+    </h2>
+
+    <div class="event-card">
+
+      <div class="event-icon">
+        💍
+      </div>
+
+      <h3>Kritika & Dhruv</h3>
+
+      <div class="divider"></div>
+
+      <div class="event-date">
+        SUNDAY · 18 OCTOBER 2026
+      </div>
+
+      <div class="event-location">
+        Shivpur Railway Station
+      </div>
+
+      <a
+        class="map-btn"
+        href="https://www.google.com/maps/search/?api=1&query=Shivpur+Railway+Station"
+        target="_blank"
+      >
+        View Location
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MESSAGE
+  ========================= -->
+
+  <section class="message reveal">
+
+    <div class="message-box">
+
+      <div class="section-label">
+        A Special Invitation
+      </div>
+
+      <h2 class="section-title">
+        आपका आना ही हमारी खुशी है
+      </h2>
+
+      <div class="divider"></div>
+
+      <p class="message-text">
+        दो दिलों की नई शुरुआत के इस खूबसूरत अवसर पर
+        आपका आशीर्वाद और स्नेह हमारे लिए सबसे अनमोल है।
+        <br><br>
+        आइए, हमारे साथ इस शुभ अवसर की खुशियाँ मनाइए
+        और नवविवाहित जोड़े को अपना आशीर्वाद दीजिए।
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RSVP
+  ========================= -->
+
+  <section class="rsvp reveal">
+
+    <div class="section-label">
+      We Can't Wait To See You
+    </div>
+
+    <h2 class="section-title">
+      Will You Join Us?
+    </h2>
+
+    <p class="text">
+      Your presence will make our special day even more
+      memorable.
+    </p>
+
+    <!-- Replace the number with the actual WhatsApp number -->
+    <a
+      class="rsvp-btn"
+      href="https://wa.me/91XXXXXXXXXX?text=Hello%20Kritika%20and%20Dhruv!%20I%20would%20love%20to%20attend%20your%20wedding."
+      target="_blank"
+    >
+      RSVP on WhatsApp
+    </a>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <h2>Kritika & Dhruv</h2>
+
+    <p>
+      18 · 10 · 2026
+    </p>
+
+    <p>
+      With Love ♥
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       MUSIC
+  ========================= -->
+
+  <button
+    class="music-btn"
+    id="musicBtn"
+    onclick="toggleMusic()"
+  >
+    ♪
+  </button>
+
+  <audio id="weddingMusic" loop>
+    <!-- Put your music file in the same folder and rename it wedding.mp3 -->
+    <source src="wedding.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <script>
+
+    /* =========================
+       OPEN INVITATION
+    ========================= */
+
+    function openInvitation() {
+
+      document
+        .getElementById("opening")
+        .classList.add("hide");
+
+      const music =
+        document.getElementById("weddingMusic");
+
+      music.play().catch(() => {});
+
+    }
+
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+
+    const weddingDate =
+      new Date("October 18, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+
+      const now = new Date().getTime();
+
+      const distance =
+        weddingDate - now;
+
+      if (distance <= 0) {
+
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+
+        return;
+      }
+
+      const days =
+        Math.floor(
+          distance / (1000 * 60 * 60 * 24)
+        );
+
+      const hours =
+        Math.floor(
+          (distance % (1000 * 60 * 60 * 24))
+          / (1000 * 60 * 60)
+        );
+
+      const minutes =
+        Math.floor(
+          (distance % (1000 * 60 * 60))
+          / (1000 * 60)
+        );
+
+      const seconds =
+        Math.floor(
+          (distance % (1000 * 60))
+          / 1000
+        );
+
+      document.getElementById("days").innerText =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").innerText =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").innerText =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").innerText =
+        String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+
+    /* =========================
+       MUSIC
+    ========================= */
+
+    let musicPlaying = false;
+
+    function toggleMusic() {
+
+      const music =
+        document.getElementById("weddingMusic");
+
+      const button =
+        document.getElementById("musicBtn");
+
+      if (musicPlaying) {
+
+        music.pause();
+
+        button.classList.remove("playing");
+
+        musicPlaying = false;
+
+      } else {
+
+        music.play().catch(() => {});
+
+        button.classList.add("playing");
+
+        musicPlaying = true;
+      }
+    }
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
+        observer.observe(element);
+      });
+
+  </script>
+
+</body>
+  </html>
